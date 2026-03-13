@@ -83,7 +83,6 @@ The goal of ToxiGuard AI is to **promote healthier digital communication across 
 | Chat Platforms | Reduce harassment and abusive language |
 | Educational Platforms | Encourage constructive communication |
 
-
 ---
 
 # ⚙️ Installation

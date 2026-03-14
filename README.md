@@ -1,125 +1,117 @@
+<div align="center">
+
 # 🛡️ ToxiGuard AI
 
-<!-- <p align="center">
-Intelligent Toxic Text Detection & Constructive Rewriting System
-</p>
+### Intelligent Toxic Text Detection & Constructive Rewriting System
 
-<p align="center">
+*Transform harmful language into polite, professional communication — powered by Transformer-based NLP*
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![React](https://img.shields.io/badge/React-Frontend-blue)
-![Transformers](https://img.shields.io/badge/HuggingFace-Transformers-yellow)
-![License](https://img.shields.io/badge/License-MIT-orange)
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=flat-square&logo=react&logoColor=black)
+![HuggingFace](https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
+![License](https://img.shields.io/badge/License-MIT-22C55E?style=flat-square)
 
-</p>
- -->
+</div>
 
 
-**ToxiGuard AI** is an AI-powered communication moderation system designed to detect toxic language and transform it into **polite, constructive communication**.
+## 📌 Overview
 
-The system leverages **Transformer-based Natural Language Processing models** to:
-
-- Detect toxic text
-- Analyze emotional tone
-- Generate constructive rewritten messages
-
-The goal of ToxiGuard AI is to **promote healthier digital communication across online platforms.**
+**ToxiGuard AI** is an AI-powered communication moderation system that detects toxic language and rewrites it into **polite, constructive messages**. It uses state-of-the-art Transformer-based NLP models to analyze, score, and transform harmful text in real time — promoting healthier digital communication across any online platform.
 
 
+## ✨ Key Features
 
-
-# 🚀 Key Features
-
-🔎 Toxicity Detection
+🔎 **Toxicity Detection**
 
 - Uses transformer-based NLP models to analyze text and determine whether it contains toxic or harmful language.
 
-📊 Toxicity Intensity Score
+📊 **Toxicity Intensity Score**
 
 - Provides a confidence score indicating how toxic the message is.
 
-😊 Emotion Analysis
+😊 **Emotion Analysis**
 
 - Detects the emotional tone of the message (e.g., anger, frustration).
 
-✨ Constructive Rewriting
+✍️ **Constructive Rewriting**
 
 - Automatically rewrites toxic messages into polite, professional language while preserving meaning.
 
-⚡ Real-Time Processing
+⚡ **Real-Time Processing**
 
 - Processes messages instantly through a FastAPI backend.
 
-💻 Interactive Web Interface
+💻 **Interactive Web Interface**
 
 - Modern frontend built with React allowing users to analyze messages easily.
+## 🔄 Example Transformation
 
+```
+Input  →  "You people are useless and ruining everything."
 
-# 🏗️ Tech Stack
+Output →  "I believe there are some issues affecting our progress
+           and it would be helpful to address them constructively."
+```
 
-| Category | Technologies |
-|--------|-------------|
-| **Frontend** | React.js, HTML5, CSS3, JavaScript, Axios |
-| **Backend** | FastAPI, Python |
-| **AI / NLP Models** | HuggingFace Transformers, Toxicity Classification Model, Emotion Detection Model, LLM-based Rewriting |
-| **Development Tools** | Git, GitHub |
-| **Runtime Environment** | Node.js, npm |
-| **Environment Management** | Python Virtual Environment |
-
-
-# 🧠 System Architecture
-
-<img width="2197" height="445" alt="sts" src="https://github.com/user-attachments/assets/6391d829-a6a3-4962-845e-9ab8d67248b0" />
-
-## 🎯 Applications
-
-
-| Domain | Use Case |
-|------|------|
-| Social Media | Toxic comment moderation |
-| Online Communities | Maintain respectful discussions |
-| Workplace Communication | Improve professional messaging |
-| Chat Platforms | Reduce harassment and abusive language |
-| Educational Platforms | Encourage constructive communication |
+> **Toxicity Score:** `94% (Anger)` → `2% (Neutral)` ✅
 
 ---
 
-# ⚙️ Installation
+## 🏗️ System Architecture
 
-## 1️⃣ Clone the Repository
+
+<img width="2197" height="445" alt="sts" src="https://github.com/user-attachments/assets/6391d829-a6a3-4962-845e-9ab8d67248b0" />
+
+
+## 🧰 Tech Stack
+
+| Layer | Technologies |
+|---|---|
+| **Frontend** | React.js, HTML5, CSS3, JavaScript, Axios |
+| **Backend** | FastAPI, Python 3.9+ |
+| **AI / NLP** | HuggingFace Transformers, Toxicity Classifier, Emotion Detection Model, LLM-based Rewriter |
+| **Dev Tools** | Git, GitHub, Node.js, npm |
+| **Environment** | Python Virtual Environment (venv) |
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/ToxiGuard-AI.git
+git clone https://github.com/harsha2143/ToxiGuard-AI.git
 cd ToxiGuard-AI
 ```
-## 2️⃣ Backend Setup
-Navigate to backend
-```
-cd backend
-```
 
-Create virtual environment
-```
+---
+
+### 2. Backend Setup
+
+```bash
+# Navigate to backend
+cd backend
+
+# Create and activate virtual environment
 python -m venv venv
-```
-Activate environment
-```
-venv\Scripts\activate
-```
-Install dependencies
-```
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # macOS / Linux
+
+# Install dependencies
 pip install -r requirements.txt
-```
-Run the backend server
-```
+
+# Start the server
 uvicorn main:app --reload
 ```
-Backend runs at:
-```
-http://127.0.0.1:8000
-```
-## 3️⃣ Frontend Setup
+
+> 🟢 Backend running at `http://127.0.0.1:8000`
+
+---
+
+
+
+### 3️. Frontend Setup
 Navigate to frontend
 ```
 cd frontend
@@ -132,28 +124,31 @@ Run the application
 ```
 npm start
 ```
-Frontend runs at:
-```
-http://localhost:3000
-```
+> 🟢 Frontend running at `http://localhost:3000`
 
-## 📊 Example Output
-Input Message :
+---
 
-    You people are useless and ruining everything. 
+## 🎯 Applications
 
-Rewritten Output :
-
-    I believe there are some issues affecting our progress and it would be helpful to address them constructively.
-
-
-##  🌐 Future Improvements
-
-| Feature                | Description                             |
-| ---------------------- | --------------------------------------- |
-| Multi-language Support | Detect toxicity in multiple languages   |
-| Context-Aware Models   | Understand conversation context         |
-| Moderation API         | Provide integration for other platforms |
-| Browser Extension      | Real-time chat moderation               |
+| Domain | Use Case |
+|---|---|
+| 📱 Social Media | Automated toxic comment moderation |
+| 🏘️ Online Communities | Maintain respectful, productive discussions |
+| 💼 Workplace Tools | Improve professionalism in internal messaging |
+| 💬 Chat Platforms | Reduce harassment and abusive language in real time |
+| 🎓 Education | Encourage constructive communication among students |
 
 
+## 🌐 Future Improvements
+
+- [ ] **Multi-language Support** — Detect and rewrite toxic content in multiple languages
+- [ ] **Context-Aware Models** — Understand full conversation context to reduce false positives
+- [ ] **Moderation API** — Plug-and-play integration for third-party platforms
+- [ ] **Browser Extension** — Real-time chat moderation across any website
+
+
+<!-- <div align="center">
+
+Made with ❤️ to promote healthier digital communication
+
+</div> -->

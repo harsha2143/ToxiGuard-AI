@@ -1,33 +1,61 @@
 export default function ToxicityMeter({ intensity }) {
-  const percentage = (intensity * 100).toFixed(1);
+  const pct = (intensity * 100).toFixed(1);
 
-  const getColor = () => {
-    if (intensity > 0.6) return "from-red-500 to-rose-600";
-    if (intensity > 0.3) return "from-yellow-400 to-orange-500";
-    return "from-green-400 to-emerald-600";
+  const getCfg = () => {
+    if (intensity > 0.6) return { label: "High Toxicity",  color: "#dc2626", track: "rgba(220,38,38,0.1)",   bar: "#dc2626" };
+    if (intensity > 0.3) return { label: "Moderate",       color: "#d97706", track: "rgba(217,119,6,0.1)",   bar: "#d97706" };
+    return                       { label: "Low / Neutral", color: "#16a34a", track: "rgba(22,163,74,0.1)",   bar: "#16a34a" };
   };
 
+  const cfg = getCfg();
+
   return (
-    <div className="bg-white p-6 rounded-3xl shadow-xl border space-y-4">
-      <div className="flex justify-between">
-        <h2 className="font-bold">Toxicity Level</h2>
-        <span className="font-semibold">{percentage}%</span>
+    <div>
+      <div className="section-title">Toxicity Level</div>
+
+      <div style={{
+        background: cfg.track, border: `1px solid ${cfg.color}22`,
+        borderRadius: 12, padding: "16px 18px", marginBottom: 16,
+        display: "flex", alignItems: "flex-end", gap: 10,
+      }}>
+        <span style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: 52, fontWeight: 600,
+          color: cfg.color, lineHeight: 1, letterSpacing: "-2px",
+        }}>
+          {pct}
+        </span>
+        <span style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: 15, color: cfg.color, opacity: 0.6, paddingBottom: 7,
+        }}>%</span>
+        <div style={{ paddingBottom: 8, marginLeft: 4 }}>
+          <div style={{
+            display: "inline-flex", padding: "3px 10px", borderRadius: 20,
+            background: `${cfg.color}15`, border: `1px solid ${cfg.color}25`,
+            fontSize: 9, fontWeight: 600, color: cfg.color,
+            fontFamily: "'JetBrains Mono', monospace",
+            letterSpacing: "0.1em", textTransform: "uppercase",
+          }}>
+            {cfg.label}
+          </div>
+        </div>
       </div>
 
-      <div className="h-5 bg-gray-200 rounded-full overflow-hidden relative">
-        <div
-          className={`h-full bg-gradient-to-r ${getColor()} transition-all duration-1000 ease-out`}
-          style={{ width: `${percentage}%` }}
-        />
+      <div style={{ height: 5, borderRadius: 5, background: "#e8ddd0", overflow: "hidden" }}>
+        <div style={{
+          height: "100%", borderRadius: 5,
+          width: `${pct}%`, background: cfg.bar,
+          transition: "width 1.2s cubic-bezier(.22,1,.36,1)",
+        }} />
       </div>
-
-      <p className="text-sm text-slate-500">
-        {intensity > 0.6
-          ? "High Toxicity"
-          : intensity > 0.3
-          ? "Moderate Toxicity"
-          : "Low / Neutral"}
-      </p>
+      <div style={{
+        display: "flex", justifyContent: "space-between", marginTop: 5,
+        fontSize: 9, color: "#b5a898",
+        fontFamily: "'JetBrains Mono', monospace",
+      }}>
+        {["0", "25", "50", "75", "100"].map(v => <span key={v}>{v}</span>)}
+      </div>
     </div>
   );
 }
